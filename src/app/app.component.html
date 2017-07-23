@@ -1,4 +1,25 @@
-<h1>
-  {{title}}
-</h1>
-<p>{{subtitle}}</p>
+<ul *ngIf="categories" id="categories-container">
+  <li *ngFor="let category of categories">
+    <a>{{category.name}}</a>
+    <div class="menu-bar">
+      <span>I HAVE A LOT OF ITEMS</span>
+    </div>
+  </li>
+</ul>
+
+<h1 *ngIf="selectedProduct">{{selectedProduct.name}}</h1>
+
+<p>HELLO WORLD</p>
+
+<div *ngIf="products" id="item-container">
+  <div *ngFor="let product of products" class="item" (click)="onProductClick(product)" [class.selected]="product === selectedProduct">
+    <img src="/assets/250x250.png" alt="">
+    <p>
+      <span>{{product.id}}</span>
+      <span>{{product.name}}</span>
+    </p>
+  </div>
+</div>
+
+<app-details [product]="selectedProduct"></app-details>
+
