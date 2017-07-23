@@ -7,19 +7,21 @@
   </li>
 </ul>
 
-<h1 *ngIf="selectedProduct">{{selectedProduct.name}}</h1>
-
-<p>HELLO WORLD</p>
-
 <div *ngIf="products" id="item-container">
-  <div *ngFor="let product of products" class="item" (click)="onProductClick(product)" [class.selected]="product === selectedProduct">
+  <div *ngFor="let product of products" class="item" [class.selected]="product === selectedProduct" [appSale]="product.sale">
     <img src="/assets/250x250.png" alt="">
     <p>
       <span>{{product.id}}</span>
       <span>{{product.name}}</span>
     </p>
+    <div class="overlay-container">
+      <div class="btn-container">
+        <button (click)="onProductClick(product)">Add</button>
+        <button (click)="onProductClick(product)">Remove</button>
+      </div>
+    </div>
   </div>
 </div>
 
-<app-details [product]="selectedProduct"></app-details>
+<app-details [product]="selectedProduct" (select)="onDetailSelect($event)"></app-details>
 

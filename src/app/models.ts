@@ -1,6 +1,7 @@
 export class Product {
   id: number;
   name: string;
+  sale: boolean;
 }
 
 export class Category {

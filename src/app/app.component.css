@@ -47,6 +47,12 @@ ul#categories-container > li:hover > .menu-bar {
   margin-right: 0;
   margin-bottom: 0;
   background-color: gray;
+  position: relative;
+  overflow: hidden;
+}
+
+.item.sale {
+  background: gainsboro;
 }
 
 .item.selected {
@@ -55,4 +61,34 @@ ul#categories-container > li:hover > .menu-bar {
 
 .item:nth-child(3) {
   margin-right: 20px;
+}
+
+.item:after {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  opacity: 0;
+  content: '';
+  background-color: dimgrey;
+  transition: .2s linear all;
+}
+
+.item:hover:after {
+  opacity: 1;
+}
+
+.item .overlay-container {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: calc(50% - 41px/2);
+  padding: 10px;
+  z-index: 1;
+  opacity: 0;
+}
+
+.item:hover .overlay-container {
+  opacity: 1;
 }

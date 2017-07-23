@@ -31,7 +31,10 @@ export class AppComponent implements OnInit {
 
   getProducts(): void {
     // this.products = this.productService.getProducts();
-    this.productService.getProductsSlowly().then(products => this.products = products);
-    // this.productService.getProducts().then(products => this.products = products);
+    this.productService.getProducts().then(products => this.products = products);
+  }
+
+  onDetailSelect(product): void {
+    console.log(product);
   }
 }
