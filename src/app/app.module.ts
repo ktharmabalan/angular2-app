@@ -7,6 +7,7 @@ import { HttpModule } from '@angular/http';
 import { AppComponent } from './app.component';
 import { DetailsComponent } from './details.component';
 import { SaleDirective } from './sale.directive';
+import { SomePipe } from './app.pipe';
 
 // Decorator
 @NgModule({
@@ -14,7 +15,8 @@ import { SaleDirective } from './sale.directive';
   declarations: [
     AppComponent,
     DetailsComponent,
-    SaleDirective
+    SaleDirective,
+    SomePipe
   ],
   // Required modules from angular
   imports: [

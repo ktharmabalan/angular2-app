@@ -7,6 +7,8 @@
   </li>
 </ul>
 
+<div>{{products | some }}</div>
+
 <div *ngIf="products" id="item-container">
   <div *ngFor="let product of products" class="item" [class.selected]="product === selectedProduct" [appSale]="product.sale">
     <img src="/assets/250x250.png" alt="">
