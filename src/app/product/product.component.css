@@ -92,3 +92,7 @@ ul#categories-container > li:hover > .menu-bar {
 .item:hover .overlay-container {
   opacity: 1;
 }
+
+.card-container {
+  padding: 10px;
+}

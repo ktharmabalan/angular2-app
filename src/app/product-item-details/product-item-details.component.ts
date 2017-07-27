@@ -1,13 +1,13 @@
 import { Component, Input, Output, EventEmitter } from '@angular/core';
-import { Product} from './models';
+import { Product} from '../models';
 
 @Component({
-  selector: 'app-details',
-  templateUrl: './details.component.html',
-  styleUrls: ['./details.component.css']
+  selector: 'app-product-item-details',
+  templateUrl: './product-item-details.component.html',
+  styleUrls: ['./product-item-details.component.css']
 })
 
-export class DetailsComponent {
+export class ProductItemDetailsComponent {
   @Input() product: Product;
   @Output() select = new EventEmitter();
 

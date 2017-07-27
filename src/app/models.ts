@@ -1,10 +1,11 @@
 export class Product {
-  id: number;
-  name: string;
-  sale: boolean;
+  constructor(
+    public id: number,
+    public name: string,
+    public sale: boolean,
+    public category: number) {}
 }
 
 export class Category {
-  id: number;
-  name: string;
+  constructor(public id: number, public name: string) {}
 }

@@ -1,0 +1,19 @@
+<div class="row">
+  <div class="card-container col-sm-4" *ngFor="let product of products" [class.selected]="product === selectedProduct" [appSale]="product.sale">
+    <md-card>
+      <md-card-header>
+        <md-card-title>{{product.name}}</md-card-title>
+        <md-card-subtitle>{{product.id}}</md-card-subtitle>
+      </md-card-header>
+      <img md-card-image src="/assets/250x250.png" class="example-header-image">
+      <md-card-actions>
+          <button md-button (click)="onProductClick(product)">Add</button>
+          <button md-button (click)="onProductClick(product)">Remove</button>
+      </md-card-actions>
+    </md-card>
+  </div>
+</div>
+
+<app-product-item-form></app-product-item-form>
+
+<app-product-item-details [product]="selectedProduct" (select)="onDetailSelect($event)"></app-product-item-details>

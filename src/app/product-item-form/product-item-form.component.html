@@ -1,0 +1,33 @@
+<header>
+  <h2>Add Product</h2>
+</header>
+
+<form
+  [formGroup]="productForm"
+  (ngSubmit)="onSubmit()" novalidate>
+  <md-input-container class="form-group">
+    <input formControlName="id" mdInput placeholder="Id" name="id">
+  </md-input-container>
+
+  <md-input-container class="form-group">
+    <input formControlName="name" mdInput placeholder="Name" name="name">
+  </md-input-container>
+
+  <div class="form-group" flex>
+    <label for="category">Category</label>
+    <md-select formControlName="category" id="category">
+      <!--<md-option><em>None</em></md-option>-->
+      <md-option *ngFor="let cat of categories" [value]="cat.id">
+        {{cat.name}}
+      </md-option>
+    </md-select>
+  </div>
+
+  <section class="form-group">
+    <md-checkbox formControlName="sale" name="sale">On Sale</md-checkbox>
+  </section>
+
+  <section class="form-group">
+    <button md-raised-button [disabled]="productForm.pristine">Save</button>
+  </section>
+</form>

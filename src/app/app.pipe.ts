@@ -7,11 +7,13 @@ import { Pipe } from '@angular/core';
 export class SomePipe {
   transform(products) {
     const items = [];
-    products.forEach(product => {
-      if (items.indexOf(product.id) <= -1) {
-        items.push(product.id);
-      }
-    });
+    if (products) {
+      products.forEach(product => {
+        if (items.indexOf(product.id) <= -1) {
+          items.push(product.id);
+        }
+      });
+    }
     return items.join(', ');
   }
 }
